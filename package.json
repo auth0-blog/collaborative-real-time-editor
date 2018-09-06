@@ -1,0 +1,20 @@
+{
+  "name": "collaborative-real-time-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0-blog/collaborative-real-time-editor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auth0-blog/collaborative-real-time-editor/issues"
+  },
+  "homepage": "https://github.com/auth0-blog/collaborative-real-time-editor#readme"
+}
