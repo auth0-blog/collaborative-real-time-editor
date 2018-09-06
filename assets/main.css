@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: .95rem
+}
+
+h3 {
+  font-size: 1.5rem;
+  color:white;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+nav {
+  height:8vh;
+  flex-basis:100%;
+  background: linear-gradient(325deg, rgb(39, 107, 130) 0px, rgb(49, 84, 129) 100%);
+}
+
+button {
+  cursor: pointer;
+  border-radius:5px;
+  color: white;
+}
+
+form {
+  display:flex;
+  margin:20px;
+  padding:20px;
+  justify-content: center;
+  flex-basis:100%;
+}
+
+form input {
+  width: 50%;
+  border-width: 0 0 1px 0;
+  padding: 10px;
+  border-color: rgb(39, 107, 130);
+  margin-right:20px;
+}
+
+.main {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.sidebar {
+  display:flex;
+  flex-direction: column;
+  padding:10px;
+  flex-basis:17%;
+  height: 100vh;
+  align-content: center;
+  background: linear-gradient(325deg, rgb(39, 107, 130) 0px, rgb(49, 84, 129) 100%);
+}
+
+.active_users li {
+  list-style-type: none;
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.main_content {
+  padding: 30px;
+  flex-basis: 83%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#text_editor {
+  margin: 10px 0 40px 0;
+  height: 80vh;
+  flex-basis: 100%;
+}
+
+.login_nav {
+  display:flex;
+  justify-content:center;
+}
+
+.login_button {
+  width: 6rem;
+  height:2rem;
+  border: 1px;
+  background: red;
+  align-self: center;
+}
+
+.create_note {
+  width: 6rem;
+  border: 1px solid white;
+  background: linear-gradient(325deg, rgb(39, 107, 130) 0px, rgb(49, 84, 129) 100%);
+}

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .sidebar
+    h3 Collaborators
+    .active_users
+      ul
+  .main_content
+    #text_editor
+  script(type="text/javascript").
+    var user = "#{user.displayName}";
+  script(type="text/javascript" src="https://static.pusherplatform.com/textsync/us1/textsync.js")
+  script(type="text/javascript" src="/js/app.js")
