@@ -70,3 +70,45 @@ app.post('/textsync/tokens', (req, res) => {
       res.json(token);
     });
 });
+
+// this middleware is required to initialize passport
+app.use(passport.initialize());
+
+// as you use sessions in your server this middleware is required
+app.use(passport.session());
+
+// middleware that serializes the user into the session
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+// middleware that deserializes user's info
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+// passport middleware that initializes the Auth0 strategy
+passport.use(new Auth0Strategy({
+  domain: process.env.AUTH0_DOMAIN,
+  clientID: process.env.AUTH0_CLIENT_ID,
+  clientSecret: process.env.AUTH0_CLIENT_SECRET,
+  callbackURL: 'http://localhost:3000/callback'
+}, (accessToken, refreshToken, extraParams, profile, done) => {
+// profile contains the information of the user
+  return done(null, profile);
+}));
+
+app.get('/login', passport.authenticate('auth0', {
+  //The scope parameter determines the user information the server sends
+  scope: 'openid profile',
+}));
+
+app.get('/callback', passport.authenticate('auth0'), (req, res) => {
+  req.session.user = req.user;
+  res.redirect('/');
+});
+
+//Listen to connections on port 3000
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server listening on port 3000.");
+});
